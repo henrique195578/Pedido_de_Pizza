@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Pedido de Pizza"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:drawableLeft="@mipmap/ic_pizza"
+        android:drawableRight="@mipmap/ic_pizza"
+        />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="7dp"
+                    android:text="Selecione o tamanho"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/rg_Tamanho"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rb_Pequena"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Pequena"
+                        android:textSize="15dp"
+                        android:onClick="SelecioneOpcao"/>
+
+                    <RadioButton
+                        android:id="@+id/rb_Media"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Media"
+                        android:textSize="15dp"
+                        android:onClick="SelecioneOpcao"/>
+
+                    <RadioButton
+                        android:id="@+id/rb_Grande"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Grande"
+                        android:textSize="15dp"
+                        android:onClick="SelecioneOpcao"/>
+
+                </RadioGroup>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Seleciona o Sabor"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+                <Spinner
+                    android:id="@+id/spn_Sabores"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="14dp" />
+
+            </LinearLayout>
+
+            <ListView
+                android:id="@+id/list_Sabores"
+                android:layout_width="match_parent"
+                android:layout_height="258dp" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:backgroundTint="@color/Vermelho"
+                android:text="Remover Sabor"
+                android:onClick="btn_RemoverSabores"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/ck_com_Borda"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="retornaCheckBox"
+                    android:text="Borda" />
+
+                <CheckBox
+                    android:id="@+id/ck_com_Refrigerante"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="retornaCheckBox"
+                    android:text="Refrigerante" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="60dp"
+                android:text=""
+                android:textSize="12dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:id="@+id/tv_Result"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:backgroundTint="@color/Verde"
+                    android:onClick="btn_ConcluirPedido"
+                    android:text="Concluir Pedido"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:backgroundTint="@color/Vermelho"
+                    android:onClick="btn_LimparPedido"
+                    android:text="Limpar"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
